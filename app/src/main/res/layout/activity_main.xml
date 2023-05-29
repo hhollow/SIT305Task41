@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBarRest"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+        android:layout_width="308dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/displaySetNumber"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/displayCountDownWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="00:00"
+        android:textColor="@android:color/black"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/labelWorkoutProgress"
+        app:layout_constraintStart_toStartOf="@+id/displayCountDownRest"
+        app:layout_constraintTop_toTopOf="@+id/labelWorkoutProgress" />
+
+    <TextView
+        android:id="@+id/displaySetNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="143dp"
+        android:text="0"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/labelNumberCompletedSets"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelNumberCompletedSets" />
+
+    <TextView
+        android:id="@+id/displayCountDownRest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:text="00:00"
+        android:textColor="@android:color/black"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/labelRestProgress"
+        app:layout_constraintStart_toStartOf="@+id/displaySetNumber"
+        app:layout_constraintTop_toTopOf="@+id/labelRestProgress" />
+
+    <EditText
+        android:id="@+id/userInputRest"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:inputType="number"
+        android:maxLength="2"
+        app:layout_constraintBottom_toBottomOf="@+id/labelRestInput"
+        app:layout_constraintEnd_toEndOf="@+id/userInputWorkout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userInputWorkout"
+        app:layout_constraintTop_toTopOf="@+id/labelRestInput"
+        app:layout_constraintVertical_bias="0.447"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/userInputWorkout"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="44dp"
+        android:ems="10"
+        android:inputType="number"
+        android:maxLength="2"
+        app:layout_constraintBottom_toBottomOf="@+id/labelWorkoutInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelWorkoutInput"
+        app:layout_constraintVertical_bias="0.447"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/userInputSets"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:inputType="number"
+        android:maxLength="2"
+        app:layout_constraintBottom_toBottomOf="@+id/labelSetsInput"
+        app:layout_constraintEnd_toEndOf="@+id/userInputRest"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userInputRest"
+        app:layout_constraintTop_toTopOf="@+id/labelSetsInput"
+        app:layout_constraintVertical_bias="0.447"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/button_start_pause"
+        android:layout_width="159dp"
+        android:layout_height="51dp"
+        android:layout_below="@+id/displayCountDownWorkout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="308dp"
+        android:layout_marginEnd="126dp"
+        android:text="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelWorkoutInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="107dp"
+        android:text="Enter Workout Time (mins)"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelRestInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Enter Rest Time (mins)"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/labelWorkoutInput"
+        app:layout_constraintTop_toBottomOf="@+id/labelWorkoutInput" />
+
+    <TextView
+        android:id="@+id/labelSetsInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Enter Number of Sets"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/labelRestInput"
+        app:layout_constraintTop_toBottomOf="@+id/labelRestInput" />
+
+    <TextView
+        android:id="@+id/labelWorkoutProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:text="Workout Progress"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBarWorkout"
+        app:layout_constraintStart_toStartOf="@+id/labelRestProgress" />
+
+    <TextView
+        android:id="@+id/labelRestProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="Rest Progress"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBarRest"
+        app:layout_constraintStart_toStartOf="@+id/labelNumberCompletedSets" />
+
+    <TextView
+        android:id="@+id/labelNumberCompletedSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginBottom="80dp"
+        android:text="Completed Sets"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBarWorkout"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
+        android:layout_width="308dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/displayCountDownRest"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
